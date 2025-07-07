@@ -1,0 +1,69 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+import { Button } from "../ui/button"
+import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
+import Image from "next/image"
+
+export function ProcessSection() {
+  return (
+    <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#0a0a0a] flex items-center">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#005140] blur-[120px] opacity-10 dark:opacity-20"></div>
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+          {/* Content - Left Side */}
+          <div className="w-full md:w-1/2 space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-[1px] bg-[#005140]"></div>
+              <span className="text-sm uppercase tracking-[0.2em] text-gray-500">THE PROCESS</span>
+            </div>
+            <h2 className="text-5xl font-light leading-tight">
+              <span className="block text-[#005140]">Crafted with</span>
+              <span className="block">Precision &</span>
+              <span className="block">Care</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              Every cup tells a story of dedication, from selecting the finest beans to our 
+              meticulous 18-hour cold brew process.
+            </p>
+            <Button 
+              className="w-full md:w-auto rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-6 md:px-8 h-12 md:h-14 text-base md:text-lg"
+            >
+              <span className="mr-2">Learn about our process</span>
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+
+          {/* Flying Coffee Cup - Right Side */}
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <motion.div
+              animate={{ 
+                y: [0, -20, 0],
+                rotate: [-2, 2, -2]
+              }}
+              transition={{ 
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-[500px] h-[500px] relative"
+            >
+              <Image
+                src="/—Pngtree—flying cup of coffee with_15739217.png"
+                alt="Flying Coffee Cup"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+} 
