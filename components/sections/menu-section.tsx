@@ -3,6 +3,8 @@
 import { Button } from "../ui/button"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
+import { Snowflake, Sparkles, Droplet, Leaf } from "lucide-react"
 
 export function MenuSection() {
   return (
@@ -78,12 +80,12 @@ export function MenuSection() {
             <div className="text-center space-y-6 mb-16">
               <div className="flex items-center justify-center gap-4">
                 <div className="w-12 h-[1px] bg-[#005140]"></div>
-                <span className="text-sm uppercase tracking-[0.2em] text-gray-500">OUR MENU</span>
+                <span className="text-sm uppercase tracking-[0.2em] text-gray-500">SIGNATURE DRINKS</span>
                 <div className="w-12 h-[1px] bg-[#005140]"></div>
               </div>
               <h2 className="text-5xl font-light leading-tight">
-                <span className="block text-[#005140]">Signature</span>
-                <span className="block">Cold Brews</span>
+                <span className="block text-[#005140]">Frozen</span>
+                <span className="block">Delights</span>
               </h2>
             </div>
 
@@ -92,15 +94,16 @@ export function MenuSection() {
               {/* Menu Item 1 */}
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
+                  <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">SIGNATURE BLEND</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">TROPICAL FUSION</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Verde Intensity</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">18-hour steep / Medium roast</div>
-                    <div className="text-[#005140] mt-1">$5.50</div>
+                    <div className="text-xl md:text-2xl font-light">Mango</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Sweet tropical mango blend</div>
+                    <div className="text-[#005140] mt-1">₺140-150</div>
                   </div>
                 </div>
               </div>
@@ -108,15 +111,16 @@ export function MenuSection() {
               {/* Menu Item 2 */}
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
+                  <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">SEASONAL SPECIAL</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">CRISP & FRESH</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Vanilla Bean Dream</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Madagascar vanilla / Light roast</div>
-                    <div className="text-[#005140] mt-1">$6.00</div>
+                    <div className="text-xl md:text-2xl font-light">Yeşil Elma</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Refreshing green apple</div>
+                    <div className="text-[#005140] mt-1">₺140-150</div>
                   </div>
                 </div>
               </div>
@@ -124,15 +128,16 @@ export function MenuSection() {
               {/* Menu Item 3 */}
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
+                  <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">HOUSE FAVORITE</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">EXOTIC BLEND</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Mocha Midnight</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Dark chocolate / Dark roast</div>
-                    <div className="text-[#005140] mt-1">$6.50</div>
+                    <div className="text-xl md:text-2xl font-light">Ananas Kavun</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Pineapple melon harmony</div>
+                    <div className="text-[#005140] mt-1">₺150</div>
                   </div>
                 </div>
               </div>
@@ -140,25 +145,28 @@ export function MenuSection() {
               {/* Menu Item 4 */}
               <div className="space-y-8">
                 <div className="flex items-center gap-4">
+                  <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">BARISTA'S CHOICE</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">BERRY BLAST</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Caramel Fusion</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Sea salt caramel / Medium roast</div>
-                    <div className="text-[#005140] mt-1">$6.00</div>
+                    <div className="text-xl md:text-2xl font-light">Kırmızı Orman Meyvesi</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Red forest fruit medley</div>
+                    <div className="text-[#005140] mt-1">₺140</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* View Full Menu Button */}
-            <div className="text-center mt-16">
-              <Button className="rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-8 h-14 text-lg">
-                View Full Menu
-              </Button>
+            <div className="text-center mt-12">
+              <Link href="/menu">
+                <Button className="rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-8 h-14">
+                  View Full Menu
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

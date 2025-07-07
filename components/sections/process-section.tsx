@@ -5,16 +5,24 @@ import { Button } from "../ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 export function ProcessSection() {
+  const scrollToCulture = () => {
+    const cultureSection = document.querySelector('#culture-section')
+    if (cultureSection) {
+      cultureSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#0a0a0a] flex items-center">
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[#005140] blur-[120px] opacity-10 dark:opacity-20"></div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-16">
           {/* Content - Left Side */}
           <div className="w-full md:w-1/2 space-y-6">
@@ -32,9 +40,10 @@ export function ProcessSection() {
               meticulous 18-hour cold brew process.
             </p>
             <Button 
+              onClick={scrollToCulture}
               className="w-full md:w-auto rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-6 md:px-8 h-12 md:h-14 text-base md:text-lg"
             >
-              <span className="mr-2">Learn about our process</span>
+              <span className="mr-2">Discover Our Story</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
