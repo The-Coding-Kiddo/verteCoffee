@@ -5,13 +5,8 @@ import Image from "next/image"
 import { Button } from "./ui/button"
 import { Menu, Coffee } from "lucide-react"
 import { useTheme } from "next-themes"
-import { ProcessSection } from "./sections/process-section"
-import { MenuSection } from "./sections/menu-section"
-import { CultureSection } from "./sections/culture-section"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Footer } from "./sections/footer"
-import { Navbar } from "./navbar"
 import { useRouter } from 'next/navigation'
 import { useLanguage } from "@/lib/i18n/language-context"
 
@@ -91,17 +86,6 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </div>
-
-      {/* Process Section */}
-      <ProcessSection />
-
-      {/* Menu Section */}
-      <MenuSection />
-
-      {/* Culture Section */}
-      <CultureSection />
-
-      <Footer />
     </div>
   )
 } 

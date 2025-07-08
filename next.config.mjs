@@ -11,7 +11,6 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
-    domains: ['www.vertecoffeehouse.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,17 +18,10 @@ const nextConfig = {
       }
     ],
   },
-  // Optimization for production builds
-  swcMinify: true,
+  // Production optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Production optimizations
-  productionBrowserSourceMaps: false,
-  optimizeFonts: true,
-  compress: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
   // Reduce bundle size
   modularizeImports: {
     '@/components': {
@@ -45,6 +37,38 @@ const nextConfig = {
     NEXT_PUBLIC_SITE_DESCRIPTION: 'Experience the finest coffee at Verte Coffee House',
     NEXT_PUBLIC_SITE_URL: 'https://www.vertecoffeehouse.com',
   },
+  // Security
+  headers: async () => [
+    {
+      source: '/:path*',
+      headers: [
+        {
+          key: 'X-DNS-Prefetch-Control',
+          value: 'on'
+        },
+        {
+          key: 'Strict-Transport-Security',
+          value: 'max-age=31536000; includeSubDomains'
+        },
+        {
+          key: 'X-Frame-Options',
+          value: 'SAMEORIGIN'
+        },
+        {
+          key: 'X-Content-Type-Options',
+          value: 'nosniff'
+        },
+        {
+          key: 'Referrer-Policy',
+          value: 'strict-origin-when-cross-origin'
+        }
+      ],
+    },
+  ],
+  // Compression and performance
+  compress: true,
+  reactStrictMode: true,
+  poweredByHeader: false,
 }
 
 export default nextConfig
