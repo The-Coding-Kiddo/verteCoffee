@@ -40,26 +40,26 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <Image
+          <Image
               src="/vertelogo.jpg"
-              alt="Verte Coffee House"
+            alt="Verte Coffee House"
               width={40}
               height={40}
-              priority
+            priority
               quality={90}
               className="rounded-full"
               sizes="40px"
-            />
-            <div className="flex flex-col">
+          />
+          <div className="flex flex-col">
               <span className="text-2xl font-light tracking-wide text-[#005140]">Verte</span>
               <span className="text-sm font-light tracking-wider text-gray-600 dark:text-gray-400">Coffee House</span>
-            </div>
-          </Link>
-
+          </div>
+        </Link>
+        
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <Link
+          <Link 
                 key={item.name}
                 href={item.href}
                 className={`text-sm hover:text-[#005140] transition-colors ${
@@ -67,7 +67,7 @@ export function Navbar() {
                 }`}
               >
                 {item.name}
-              </Link>
+          </Link>
             ))}
           </div>
 
@@ -79,14 +79,14 @@ export function Navbar() {
             >
               {language === "en" ? "TR" : "EN"}
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
+          <Button 
+            variant="ghost" 
+            size="icon"
               className="rounded-full w-9 h-9 hover:bg-[#005140]/10"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
+          >
               <Coffee className="h-4 w-4 animate-[spin_3s_ease-in-out_infinite]" />
-            </Button>
+          </Button>
             
             {/* Mobile Menu Button */}
             <button

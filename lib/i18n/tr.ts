@@ -114,5 +114,36 @@ export const tr = {
     connect: {
       title: 'Bize Ulaşın',
     },
+    promotion: {
+      sectionTitle: 'Verte Anınızı Paylaşın',
+      title: 'Sosyal Medyada Yerinizi Alın!',
+      description: 'Verte Coffee House deneyiminizi paylaşın ve sosyal medya platformlarımızda ücretsiz olarak yer alın!',
+      howTo: {
+        title: 'Nasıl Katılabilirsiniz:',
+        steps: {
+          record: 'Kısa bir video çekin',
+          introduce: 'Kendinizi tanıtın:',
+          details: {
+            name: 'Ad ve soyadınız',
+            location: 'Ülke ve şehriniz'
+          },
+          phrase: 'Sihirli cümleyi söyleyin:',
+          magicWords: 'KAHVE ANKARADA VERTE COFFEE HOUSTA İÇİLİR SELAM TÜRKİYE...'
+        }
+      },
+      platforms: {
+        instagram: 'Instagram',
+        gmail: 'E-posta',
+        whatsapp: 'WhatsApp'
+      },
+      contact: {
+        whatsapp: '+90 542 683 1335',
+        email: 'vertecoffeehouse@gmail.com'
+      },
+      footer: {
+        send: 'Videolarınızı WhatsApp veya e-posta yoluyla gönderin, biz de Instagram\'da facebook ve web sayfimizde paylaşalım.',
+        closing: 'Sevgiyle kalın! ❤️'
+      }
+    }
   },
 } 

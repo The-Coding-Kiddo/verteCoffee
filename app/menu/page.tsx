@@ -168,7 +168,7 @@ export default function MenuPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="aspect-square relative rounded-2xl overflow-hidden">
               <Image
-                src="/2.1.jpg"
+                src="/2.1.jpeg"
                 alt="Coffee 1"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"

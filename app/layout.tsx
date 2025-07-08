@@ -22,7 +22,7 @@ export default function RootLayout({
           enableSystem={true}
         >
           <LanguageProvider>
-            {children}
+          {children}
           </LanguageProvider>
         </ThemeProvider>
       </body>

@@ -114,5 +114,36 @@ export const en = {
     connect: {
       title: 'Connect With Us',
     },
+    promotion: {
+      sectionTitle: 'Share Your Verte Moment',
+      title: 'Be Featured on Our Social Media!',
+      description: 'Share your Verte Coffee House experience and get featured on our social media platforms for free!',
+      howTo: {
+        title: 'How to Participate:',
+        steps: {
+          record: 'Record a short video',
+          introduce: 'Introduce yourself with:',
+          details: {
+            name: 'Your full name',
+            location: 'Your country and city'
+          },
+          phrase: 'Say the magic words:',
+          magicWords: 'THE BEST COFFEE IN ANKARA IS AT VERTE COFFEE HOUSE. GREETINGS, TURKEY!'
+        }
+      },
+      platforms: {
+        instagram: 'Instagram',
+        gmail: 'Email',
+        whatsapp: 'WhatsApp'
+      },
+      contact: {
+        whatsapp: '+90 542 683 1335',
+        email: 'vertecoffeehouse@gmail.com'
+      },
+      footer: {
+        send: 'Send your videos via WhatsApp or email, and we\'ll share them on Instagram.',
+        closing: 'Stay connected with love! ❤️'
+      }
+    }
   },
 } 
