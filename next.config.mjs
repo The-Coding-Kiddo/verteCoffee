@@ -24,19 +24,13 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Vercel specific optimizations
-  experimental: {
-    optimizeCss: true,
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-  },
-  // Enable static exports for faster page loads
-  output: 'standalone',
-  // Compress responses
+  // Production optimizations
+  productionBrowserSourceMaps: false,
+  optimizeFonts: true,
   compress: true,
-  // Enable React strict mode for better debugging
   reactStrictMode: true,
-  // Reduce bundle size by enabling tree shaking
+  poweredByHeader: false,
+  // Reduce bundle size
   modularizeImports: {
     '@/components': {
       transform: '@/components/{{member}}',
@@ -45,13 +39,12 @@ const nextConfig = {
       transform: '@/lib/{{member}}',
     },
   },
-  // Add metadata
+  // Environment variables
   env: {
     NEXT_PUBLIC_SITE_NAME: 'Verte Coffee House',
     NEXT_PUBLIC_SITE_DESCRIPTION: 'Experience the finest coffee at Verte Coffee House',
     NEXT_PUBLIC_SITE_URL: 'https://www.vertecoffeehouse.com',
   },
-  poweredByHeader: false,
 }
 
 export default nextConfig

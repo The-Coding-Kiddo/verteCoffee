@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/*
+Disallow: /_next/*
+
+# Host
+Host: https://www.vertecoffeehouse.com
+
+# Sitemaps
+Sitemap: https://www.vertecoffeehouse.com/sitemap.xml
+Sitemap: https://www.vertecoffeehouse.com/server-sitemap.xml
