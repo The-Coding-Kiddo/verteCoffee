@@ -1,9 +1,11 @@
 'use client'
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Coffee, Snowflake, Leaf, Sparkles, Droplet } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/sections/footer"
+import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const categories = [
   {
@@ -75,6 +77,12 @@ const categories = [
 ]
 
 export default function MenuPage() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0a] text-[#0a0a0a] dark:text-white">
       <Navbar />
@@ -104,52 +112,103 @@ export default function MenuPage() {
       </section>
 
       {/* Menu Categories */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative border border-black/5 dark:border-white/5 rounded-2xl p-8 backdrop-blur-sm bg-white/50 dark:bg-black/50"
-              >
-                <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="text-[#005140]">
-                    {category.icon}
-                  </div>
-                  <div className="space-y-1">
-                    <h2 className="text-sm tracking-[0.2em] text-gray-500 dark:text-gray-400">{category.title}</h2>
-                    <div className="w-12 h-[1px] bg-[#005140]"></div>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {category.items.map((item, itemIndex) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: itemIndex * 0.05 }}
-                      className="group flex items-center justify-between gap-4 hover:text-[#005140] transition-colors duration-300"
-                    >
-                      <div className="flex-1">
-                        <div className="text-base font-light">{item.name}</div>
+      <AnimatePresence>
+        {isClient && (
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {categories.map((category, index) => (
+                  <motion.div
+                    key={category.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="relative border border-black/5 dark:border-white/5 rounded-2xl p-8 backdrop-blur-sm bg-white/50 dark:bg-black/50"
+                  >
+                    <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="text-[#005140]">
+                        {category.icon}
                       </div>
-                      <div className="w-12 h-[1px] bg-[#005140]/20 group-hover:bg-[#005140] transition-colors duration-300"></div>
-                      <div className="font-light text-[#005140]">₺{item.price}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                      <div className="space-y-1">
+                        <h2 className="text-sm tracking-[0.2em] text-gray-500 dark:text-gray-400">{category.title}</h2>
+                        <div className="w-12 h-[1px] bg-[#005140]"></div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-6">
+                      {category.items.map((item, itemIndex) => (
+                        <motion.div
+                          key={item.name}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.4, delay: itemIndex * 0.05 + index * 0.1 }}
+                          className="group flex items-center justify-between gap-4 hover:text-[#005140] transition-colors duration-300"
+                        >
+                          <div className="flex-1">
+                            <div className="text-base font-light">{item.name}</div>
+                          </div>
+                          <div className="w-12 h-[1px] bg-[#005140]/20 group-hover:bg-[#005140] transition-colors duration-300"></div>
+                          <div className="font-light text-[#005140]">₺{item.price}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </AnimatePresence>
+
+      <div className="relative py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="aspect-square relative rounded-2xl overflow-hidden">
+              <Image
+                src="/2.1.jpg"
+                alt="Coffee 1"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                priority
+                className="object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="aspect-square relative rounded-2xl overflow-hidden">
+              <Image
+                src="/2.2.jpg"
+                alt="Coffee 2"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading="lazy"
+                className="object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="aspect-square relative rounded-2xl overflow-hidden">
+              <Image
+                src="/2.3.jpg"
+                alt="Coffee 3"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading="lazy"
+                className="object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="aspect-square relative rounded-2xl overflow-hidden">
+              <Image
+                src="/2.4.jpg"
+                alt="Coffee 4"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading="lazy"
+                className="object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <Footer />
     </div>

@@ -5,8 +5,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Snowflake, Sparkles, Droplet, Leaf } from "lucide-react"
+import { useLanguage } from "../../lib/i18n/language-context"
 
 export function MenuSection() {
+  const { translations } = useLanguage()
+
   return (
     <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#0a0a0a] flex items-center">
       {/* Background Elements */}
@@ -36,11 +39,11 @@ export function MenuSection() {
               className="w-[400px] h-[400px] relative"
             >
               <Image
-                src="/—Pngtree—coffee ice drink soft with_19780577.png"
+                src="/images/iced-coffee.png"
                 alt="Iced Coffee"
                 width={400}
                 height={400}
-                quality={85}
+                quality={90}
                 className="object-contain"
                 priority
                 sizes="(max-width: 1024px) 0vw, 400px"
@@ -70,16 +73,16 @@ export function MenuSection() {
               className="w-[400px] h-[400px] relative"
             >
               <Image
-                src="/—Pngtree—iced matcha latte with smooth_20696564.png"
+                src="/images/matcha-latte.png"
                 alt="Matcha Latte"
                 width={400}
                 height={400}
-                quality={85}
+                quality={90}
                 className="object-contain"
                 priority
                 sizes="(max-width: 1024px) 0vw, 400px"
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVigAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjxAOEA4Qi4tMT03PVNhUVFXaWNqY2hiZGNhZGH/2wBDARUXFx4aHh8gIB8hISFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjxAOEA4Qi4tMT03PVNhUVFXaWNqY2hiZGNhZGH/2wBDARUXFx4aHh8gIB8hISFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </motion.div>
           </motion.div>
@@ -90,12 +93,12 @@ export function MenuSection() {
             <div className="text-center space-y-6 mb-16">
               <div className="flex items-center justify-center gap-4">
                 <div className="w-12 h-[1px] bg-[#005140]"></div>
-                <span className="text-sm uppercase tracking-[0.2em] text-gray-500">SIGNATURE DRINKS</span>
+                <span className="text-sm uppercase tracking-[0.2em] text-gray-500">{translations.menu.sectionTitle}</span>
                 <div className="w-12 h-[1px] bg-[#005140]"></div>
               </div>
               <h2 className="text-5xl font-light leading-tight">
-                <span className="block text-[#005140]">Frozen</span>
-                <span className="block">Delights</span>
+                <span className="block text-[#005140]">{translations.menu.title.line1}</span>
+                <span className="block">{translations.menu.title.line2}</span>
               </h2>
             </div>
 
@@ -106,14 +109,14 @@ export function MenuSection() {
                 <div className="flex items-center gap-4">
                   <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">TROPICAL FUSION</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{translations.menu.items.mango.category}</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Mango</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Sweet tropical mango blend</div>
-                    <div className="text-[#005140] mt-1">₺140-150</div>
+                    <div className="text-xl md:text-2xl font-light">{translations.menu.items.mango.name}</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">{translations.menu.items.mango.description}</div>
+                    <div className="text-[#005140] mt-1">{translations.menu.items.mango.price}</div>
                   </div>
                 </div>
               </div>
@@ -123,14 +126,14 @@ export function MenuSection() {
                 <div className="flex items-center gap-4">
                   <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">CRISP & FRESH</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{translations.menu.items.greenApple.category}</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Yeşil Elma</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Refreshing green apple</div>
-                    <div className="text-[#005140] mt-1">₺140-150</div>
+                    <div className="text-xl md:text-2xl font-light">{translations.menu.items.greenApple.name}</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">{translations.menu.items.greenApple.description}</div>
+                    <div className="text-[#005140] mt-1">{translations.menu.items.greenApple.price}</div>
                   </div>
                 </div>
               </div>
@@ -140,14 +143,14 @@ export function MenuSection() {
                 <div className="flex items-center gap-4">
                   <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">EXOTIC BLEND</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{translations.menu.items.pineappleMelon.category}</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Ananas Kavun</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Pineapple melon harmony</div>
-                    <div className="text-[#005140] mt-1">₺150</div>
+                    <div className="text-xl md:text-2xl font-light">{translations.menu.items.pineappleMelon.name}</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">{translations.menu.items.pineappleMelon.description}</div>
+                    <div className="text-[#005140] mt-1">{translations.menu.items.pineappleMelon.price}</div>
                   </div>
                 </div>
               </div>
@@ -157,14 +160,14 @@ export function MenuSection() {
                 <div className="flex items-center gap-4">
                   <Snowflake className="w-5 h-5 text-[#005140]" />
                   <div className="w-8 md:w-12 h-[1px] bg-[#005140]"></div>
-                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">BERRY BLAST</span>
+                  <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{translations.menu.items.redForest.category}</span>
                 </div>
                 <div className="relative">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[#005140]"></div>
                   <div className="pl-8">
-                    <div className="text-xl md:text-2xl font-light">Kırmızı Orman Meyvesi</div>
-                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">Red forest fruit medley</div>
-                    <div className="text-[#005140] mt-1">₺140</div>
+                    <div className="text-xl md:text-2xl font-light">{translations.menu.items.redForest.name}</div>
+                    <div className="text-gray-500 dark:text-gray-400 mt-2 text-sm md:text-base">{translations.menu.items.redForest.description}</div>
+                    <div className="text-[#005140] mt-1">{translations.menu.items.redForest.price}</div>
                   </div>
                 </div>
               </div>
@@ -174,7 +177,7 @@ export function MenuSection() {
             <div className="text-center mt-12">
               <Link href="/menu">
                 <Button className="rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-8 h-14">
-                  View Full Menu
+                  {translations.menu.viewFullMenu}
                 </Button>
               </Link>
             </div>

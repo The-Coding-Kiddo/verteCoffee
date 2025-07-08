@@ -6,8 +6,11 @@ import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+import { useLanguage } from "../../lib/i18n/language-context"
 
 export function ProcessSection() {
+  const { translations } = useLanguage()
+
   const scrollToCulture = () => {
     const cultureSection = document.querySelector('#culture-section')
     if (cultureSection) {
@@ -28,22 +31,21 @@ export function ProcessSection() {
           <div className="w-full md:w-1/2 space-y-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-[1px] bg-[#005140]"></div>
-              <span className="text-sm uppercase tracking-[0.2em] text-gray-500">THE PROCESS</span>
+              <span className="text-sm uppercase tracking-[0.2em] text-gray-500">{translations.process.sectionTitle}</span>
             </div>
             <h2 className="text-5xl font-light leading-tight">
-              <span className="block text-[#005140]">Crafted with</span>
-              <span className="block">Precision &</span>
-              <span className="block">Care</span>
+              <span className="block text-[#005140]">{translations.process.title.line1}</span>
+              <span className="block">{translations.process.title.line2}</span>
+              <span className="block">{translations.process.title.line3}</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Every cup tells a story of dedication, from selecting the finest beans to our 
-              meticulous 18-hour cold brew process.
+              {translations.process.description}
             </p>
             <Button 
               onClick={scrollToCulture}
               className="w-full md:w-auto rounded-full bg-[#005140] hover:bg-[#005140]/90 text-white px-6 md:px-8 h-12 md:h-14 text-base md:text-lg"
             >
-              <span className="mr-2">Discover Our Story</span>
+              <span className="mr-2">{translations.process.discoverButton}</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
@@ -63,17 +65,17 @@ export function ProcessSection() {
               className="w-[500px] h-[500px] relative"
             >
               <Image
-                src="/—Pngtree—flying cup of coffee with_15739217.png"
+                src="/images/flying-coffee-cup.png"
                 alt="Flying Coffee Cup"
                 width={500}
                 height={500}
-                quality={85}
+                quality={90}
                 loading="eager"
                 className="object-contain"
                 priority
                 sizes="(max-width: 768px) 100vw, 500px"
                 placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjxAOEA4Qi4tMT03PVNhUVFXaWNqY2hiZGNhZGH/2wBDARUXFx4aHh8gIB8hISFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVigAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYvLy0vLi44QjxAOEA4Qi4tMT03PVNhUVFXaWNqY2hiZGNhZGH/2wBDARUXFx4aHh8gIB8hISFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </motion.div>
           </div>
